@@ -1,0 +1,12 @@
+.loadMoreBtn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #fff;
+
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  display: block;
+  margin: 15px auto;
+}

@@ -1,0 +1,30 @@
+.header {
+  padding: 20px 0;
+  background-color: #4e75ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.searchContainer {
+  position: relative;
+  display: inline-block;
+}
+.inputField {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 260px;
+}
+
+.searchBoxBtn {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
