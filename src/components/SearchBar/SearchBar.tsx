@@ -1,10 +1,17 @@
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, FormikHelpers } from "formik";
 import css from "./SearchBar.module.css";
 import toast from "react-hot-toast";
 import { IoSearch } from "react-icons/io5";
 
-const SearchBar = ({ onSetSearchQuery }) => {
-  const handleSubmit = (values, { resetForm }) => {
+interface SearchBarProps {
+  onSetSearchQuery: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSetSearchQuery }) => {
+  const handleSubmit = (
+    values: { query: string },
+    { resetForm }: FormikHelpers<{ query: string }>
+  ) => {
     const { query } = values;
     if (query.trim() !== "") {
       onSetSearchQuery(query.trim());

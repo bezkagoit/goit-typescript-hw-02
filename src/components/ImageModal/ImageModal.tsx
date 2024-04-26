@@ -22,9 +22,13 @@ const customStyles = {
   },
 };
 
-const ImageModal = ({ imageUrl, closeModal }) => {
+interface ImageModalProps {
+  imageUrl: string;
+  closeModal: () => void;
+}
+const ImageModal: React.FC<ImageModalProps> = ({ imageUrl, closeModal }) => {
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeModal();
       }
@@ -35,6 +39,10 @@ const ImageModal = ({ imageUrl, closeModal }) => {
     };
   }, [closeModal]);
 
+  const handleCloseButtonClick = () => {
+    closeModal();
+  };
+
   return (
     <Modal
       isOpen={!!imageUrl}
@@ -42,7 +50,7 @@ const ImageModal = ({ imageUrl, closeModal }) => {
       style={customStyles}
       contentLabel="Image Modal"
     >
-      <button className={css.closeButton} onClick={closeModal}>
+      <button className={css.closeButton} onClick={handleCloseButtonClick}>
         <RiCloseLine size="40" />
       </button>
       <div>

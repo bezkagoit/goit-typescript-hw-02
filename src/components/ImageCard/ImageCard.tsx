@@ -1,7 +1,12 @@
-import React from "react";
+import { Photo } from "../App/App.types";
 import css from "./ImageCard.module.css";
 
-const ImageCard = ({ photo, onClick }) => {
+interface ImageCardProps {
+  photo: Photo;
+  onClick: (photo: Photo) => void;
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
   const handleClick = () => {
     onClick(photo);
   };

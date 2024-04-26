@@ -1,7 +1,6 @@
-import React from "react";
 import css from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({ onClick }) => {
+const LoadMoreBtn = ({ onClick }: { onClick: () => void }) => {
   return (
     <div>
       <button className={css.loadMoreBtn} type="button" onClick={onClick}>
